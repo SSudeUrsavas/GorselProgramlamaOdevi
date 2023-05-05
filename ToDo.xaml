@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Görsel_Programlama_Ödev_1.ToDo"
+             Title="Yapılacaklar Listesi"
+             BackgroundColor="CadetBlue">
+    <VerticalStackLayout>
+        <Label 
+            Text="Yapılacaklar Listesi"
+            TextColor="BlanchedAlmond"
+            FontSize="18"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="15"/>
+
+        <HorizontalStackLayout>
+            <Entry x:Name="e1" Placeholder="Yeni madde..." TextColor="Black" WidthRequest="250" BackgroundColor="White" Margin="10, 20, 0, 10"/>
+            <ImageButton x:Name="ekle" Source="add.png" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ekle_Clicked"/>
+            <ImageButton x:Name="kaydet" Source="save.png" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <ListView x:Name="MyList" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="Auto, *, Auto">
+
+                            <CheckBox/>
+                            <Label x:Name="label" Text="{Binding Yeni}" TextColor="BlanchedAlmond" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" Margin="60, 5, 0, 0"/>
+                            <ImageButton Source="pencil.png" WidthRequest="8" HeightRequest="8" Margin="200,0,0,0"/>
+                            <ImageButton x:Name="sil" Source="delete.png" WidthRequest="8" HeightRequest="8" Margin="300,0,0,0" Clicked="sil_Clicked"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>

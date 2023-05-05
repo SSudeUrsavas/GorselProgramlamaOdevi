@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Görsel_Programlama_Ödev_1.Kredi"
+             Title="Kredi Hesaplama"
+             BackgroundColor="Beige">
+    <VerticalStackLayout>
+        <Label 
+            Text="Kredi Hesaplama"
+            FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="OrangeRed"
+            Padding="25"/>
+
+        <Label Text="Kredi türü seçiniz:" TextColor="Black" VerticalOptions="Center" Margin="30, 0, 5, 10"/>
+
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <RadioButton x:Name="r1" Content="İhtiyaç Kredisi" TextColor="Black" Margin="30, 0" GroupName="tur" CheckedChanged="r1_CheckedChanged"/>
+                <RadioButton x:Name="r2" Content="Konut Kredisi" TextColor="Black" Margin="30, 0" GroupName="tur" CheckedChanged="r2_CheckedChanged"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <RadioButton x:Name="r3" Content="Taşıt Kredisi" TextColor="Black" Margin="30, 0" GroupName="tur" CheckedChanged="r3_CheckedChanged"/>
+                <RadioButton x:Name="r4" Content="Ticari Kredi" TextColor="Black" Margin="30, 0" GroupName="tur" CheckedChanged="r4_CheckedChanged"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+            <Label Text="Kredi Tutarı (TL):" TextColor="Black" VerticalOptions="Center" WidthRequest="125" HorizontalTextAlignment="Start"/>
+            <Entry x:Name="tutar" Placeholder="Kredi tutarı giriniz" PlaceholderColor="Gray" WidthRequest="150" BackgroundColor="White" TextColor="Black" Margin="0,10"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+            <Label Text="Faiz Oranı (%):" TextColor="Black" VerticalOptions="Center" WidthRequest="125" HorizontalTextAlignment="Start"/>
+            <Entry x:Name="oran" Placeholder="Faiz oranı giriniz" PlaceholderColor="Gray" WidthRequest="150" BackgroundColor="White" TextColor="Black" Margin="0,10"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+            <Label Text="Vade (Ay):" TextColor="Black" VerticalOptions="Center" WidthRequest="125" HorizontalTextAlignment="Start"/>
+            <Entry x:Name="vade" Text="{Binding Path=Value}" Placeholder="Vade giriniz" PlaceholderColor="Gray" WidthRequest="150" BackgroundColor="White" TextColor="Black" Margin="0,10" BindingContext="{x:Reference slider}"/>
+        </HorizontalStackLayout>
+
+        <Slider x:Name="slider" Minimum="1" Maximum="300" MinimumTrackColor="OrangeRed" WidthRequest="300" Margin="10" Value="1" ValueChanged="slider_ValueChanged"/>
+
+        <VerticalStackLayout Spacing="15" Margin="10">
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                <Label Text="Aylık Taksit:" TextColor="Black" VerticalOptions="Center" WidthRequest="125"/>
+                <Label x:Name="aylıktaksit" WidthRequest="100" TextColor="Black"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                <Label Text="Toplam Ödeme:" TextColor="Black" VerticalOptions="Center" WidthRequest="125"/>
+                <Label x:Name="toplamodeme" WidthRequest="100" TextColor="Black"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                <Label Text="Toplam Faiz:" TextColor="Black" VerticalOptions="Center" WidthRequest="125"/>
+                <Label x:Name="toplamfaiz" WidthRequest="100" TextColor="Black"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+        
+        <!-- sanırım hesaplamada bir sıkıntı var -->
+
+    </VerticalStackLayout>
+</ContentPage>
