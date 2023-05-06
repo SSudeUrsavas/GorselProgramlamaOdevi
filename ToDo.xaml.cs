@@ -54,7 +54,7 @@ public partial class ToDo : ContentPage
         if (Yeni == null)
         {
             Yeni = new Madde(){ Yeni = e1.Text };
-            liste.Add(Yeni);                     //listeye ekledik ama görünürde hala bi tık yok
+            liste.Add(Yeni);                     //listeye eklememe rağmen çalıştığında listeye eklemiyor
         }
     }
 
